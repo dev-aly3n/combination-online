@@ -66,7 +66,7 @@
         if (holder.length) {
             collect.push(holder);
         }
-        if (level < limit) {
+        if (level <= limit) {
             for (let i = 0; i < arr.length; i++) {
                 var arrcopy = arr.slice(0, arr.length);
                 var elem = arrcopy.splice(i, 1);
