@@ -18,3 +18,14 @@ a {
 * {
   box-sizing: border-box;
 }
+
+ul#console {
+  list-style-type: none;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 14px;
+  line-height: 25px;
+  padding-left: 5px;
+}
+ul#console li {
+  border-bottom: solid 1px #80808038;
+}
