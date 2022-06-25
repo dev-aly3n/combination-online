@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
-import { combinationSum, subsetSum, sumOfWhatever } from "../utils/index";
+import { sumOfWhatever } from "../utils/index";
 
 export default function Home() {
   const [specValue, setSpecValue] = useState();
