@@ -31,7 +31,7 @@ export default function Home() {
         return Number(num);
       })
       .filter(Number);
-    console.log(sumOfWhatever(numberRagne, specValue, 20));
+    console.log(sumOfWhatever(numberRagne, specValue, limitValue));
   };
   return (
     <main className="overflow-hidden w-full h-full">
