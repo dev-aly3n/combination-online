@@ -1,5 +1,6 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "../styles/Home.module.css";
+import { combinationSum, subsetSum, sumOfWhatever } from "../utils/index";
 
 export default function Home() {
   const [specValue, setSpecValue] = useState(0);
@@ -10,12 +11,18 @@ export default function Home() {
     setSpecValue(e.target.valueAsNumber);
   };
   const rangeChangeHandler = (e) => {
-    const range = e.target.value.split(" ");
-    console.log(range);
-    setRangeOfNumbers(e.target.valueAsNumber);
+    const range = e.target.value.split(/\t|\n/g);
+    const numberRagne = range.map((num)=>{
+      return Number(num).toFixed(0);
+    }).filter(Number);
+    setRangeOfNumbers(numberRagne);
   };
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const numberRagne = rangeOfNumbers.map((num)=>{
+      return Number(num);
+    }).filter(Number);
+    console.log(sumOfWhatever(numberRagne, specValue,20));;
   };
   return (
     <div className={"w-screen h-screen flex justify-center items-center"}>
