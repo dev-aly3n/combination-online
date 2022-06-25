@@ -1,61 +1,61 @@
-export const subsetSum = (numbers, target, partial) => {
-  var s, n, remaining;
+// export const subsetSum = (numbers, target, partial) => {
+//   var s, n, remaining;
 
-  partial = partial || [];
+//   partial = partial || [];
 
-  // sum partial
-  s = partial.reduce(function (a, b) {
-    return a + b;
-  }, 0);
+//   // sum partial
+//   s = partial.reduce(function (a, b) {
+//     return a + b;
+//   }, 0);
 
-  // check if the partial sum is equals to target
-  if (s === target) {
-    console.log("find " + partial.join("+") + " = " + target);
-  }
+//   // check if the partial sum is equals to target
+//   if (s === target) {
+//     console.log("find " + partial.join("+") + " = " + target);
+//   }
 
-  if (s >= target) {
-    return; // if we reach the number why bother to continue
-  }
+//   if (s >= target) {
+//     return; // if we reach the number why bother to continue
+//   }
 
-  for (var i = 0; i < numbers.length; i++) {
-    n = numbers[i];
-    remaining = numbers.slice(i + 1);
-    subsetSum(remaining, target, partial.concat([n]));
-  }
-};
+//   for (var i = 0; i < numbers.length; i++) {
+//     n = numbers[i];
+//     remaining = numbers.slice(i + 1);
+//     subsetSum(remaining, target, partial.concat([n]));
+//   }
+// };
 
-export  function combinationSum(arr, sum) {
-    let ans = new Array();
-    let temp = new Array();
+// export  function combinationSum(arr, sum) {
+//     let ans = new Array();
+//     let temp = new Array();
 
-    // first do hashing since hashset does not always
-    // sort
-    //  removing the duplicates using HashSet and
-    // Sorting the arrayList
+//     // first do hashing since hashset does not always
+//     // sort
+//     //  removing the duplicates using HashSet and
+//     // Sorting the arrayList
 
-    let set = new Set([...arr]);
-    arr = [...set];
-    arr.sort();
-    console.log(arr)
+//     let set = new Set([...arr]);
+//     arr = [...set];
+//     arr.sort();
+//     console.log(arr)
 
-    findNumbers(ans, arr, sum, 0, temp);
-    return ans;
-  }
-  function findNumbers(ans, arr, sum, index, temp) {
-    if (sum == 0) {
-      // pushing deep copy of list to ans
+//     findNumbers(ans, arr, sum, 0, temp);
+//     return ans;
+//   }
+//   function findNumbers(ans, arr, sum, index, temp) {
+//     if (sum == 0) {
+//       // pushing deep copy of list to ans
 
-      ans.push([...temp]);
-      return;
-    }
+//       ans.push([...temp]);
+//       return;
+//     }
 
-    for (let i = index; i < arr.length; i++) {
-      temp.push(arr[i]);
-      findNumbers(ans, arr, sum - arr[i], i + 1, temp);
-      // removing element from list (backtracking)
-      temp.splice(temp.indexOf(arr[i]), 1);
-    }
-  }
+//     for (let i = index; i < arr.length; i++) {
+//       temp.push(arr[i]);
+//       findNumbers(ans, arr, sum - arr[i], i + 1, temp);
+//       // removing element from list (backtracking)
+//       temp.splice(temp.indexOf(arr[i]), 1);
+//     }
+//   }
 
 
   function combinationsWithLimit(Asource, limit) {
